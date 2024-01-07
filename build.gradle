@@ -12,6 +12,15 @@ plugins {
 	id 'com.github.johnrengelman.shadow' version '7.0.0' apply false
 	id 'de.undercouch.download' version '4.1.2'
 	id 'me.champeau.jmh' version "0.6.6" apply false
+	id 'net.researchgate.release' version '2.8.0'
+}
+
+release {
+	git {
+        // requireBranch = project.hasProperty('releaseBranch') ? project.releaseBranch : 'main'
+		requireBranch = '5.3.31-wso2vx'
+        pushToRemote= "origin"
+    }
 }
 
 ext {
