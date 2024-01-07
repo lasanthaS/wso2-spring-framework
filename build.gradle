@@ -17,10 +17,10 @@ plugins {
 
 release {
 	git {
-        // requireBranch = project.hasProperty('releaseBranch') ? project.releaseBranch : 'main'
-		requireBranch = '5.3.31-wso2vx'
-        // pushToRemote = "origin"
-		pushToCurrentBranch = true
+        requireBranch = project.hasProperty('releaseBranch') ? project.releaseBranch : 'main'
+		// requireBranch = '5.3.31-wso2vx'
+        pushToRemote = "origin"
+		// pushToCurrentBranch = true
     }
 }
 
