@@ -451,3 +451,7 @@ configure(rootProject) {
 		}
 	}
 }
+
+tasks.named("afterReleaseBuild").configure {
+	dependsOn "publish"
+}
