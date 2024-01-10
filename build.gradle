@@ -16,10 +16,11 @@ plugins {
 }
 
 release {
+	tagTemplate = 'v$version';
 	git {
         requireBranch = project.hasProperty('releaseBranch') ? project.releaseBranch : 'main'
+		pushToRemote = "origin"
 		// requireBranch = '5.3.31-wso2vx'
-        pushToRemote = "origin"
 		// pushToCurrentBranch = true
     }
 }
@@ -449,5 +450,4 @@ configure(rootProject) {
 			}
 		}
 	}
-
 }
