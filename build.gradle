@@ -20,6 +20,7 @@ release {
 	git {
         requireBranch = project.findProperty('releaseBranch') ?: 'main'
 		pushToRemote = "origin"
+		buildTasks = ['build']
 		// requireBranch = '5.3.31-wso2vx'
 		// pushToCurrentBranch = true
     }
