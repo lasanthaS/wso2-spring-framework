@@ -18,7 +18,7 @@ plugins {
 release {
 	tagTemplate = 'v$version';
 	git {
-        requireBranch = project.hasProperty('releaseBranch') ? project.releaseBranch : 'main'
+        requireBranch = project.findProperty('releaseBranch') ?: 'main'
 		pushToRemote = "origin"
 		// requireBranch = '5.3.31-wso2vx'
 		// pushToCurrentBranch = true
@@ -452,6 +452,6 @@ configure(rootProject) {
 	}
 }
 
-tasks.named("afterReleaseBuild").configure {
-	dependsOn "publish"
-}
+//tasks.named("afterReleaseBuild").configure {
+//	dependsOn "publish"
+//}
