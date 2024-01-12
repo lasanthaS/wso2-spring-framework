@@ -453,17 +453,17 @@ configure(rootProject) {
 	}
 }
 
-tasks.named('build').configure {
-	finalizedBy('publishToMavenLocal')
-}
+// tasks.named('build').configure {
+// 	finalizedBy('publishToMavenLocal')
+// }
 
-tasks.named('publish').configure {
-	dependsOn('build')
-}
+// tasks.named('publish').configure {
+// 	dependsOn('build')
+// }
 
-tasks.named('afterReleaseBuild').configure {
-	dependsOn('publish')
-}
+// tasks.named('afterReleaseBuild').configure {
+// 	dependsOn('publish')
+// }
 
 //tasks.named("afterReleaseBuild").configure {
 //	dependsOn "publish"

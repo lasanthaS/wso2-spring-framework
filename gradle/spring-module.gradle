@@ -120,15 +120,19 @@ components.java.withVariantsFromConfiguration(configurations.testFixturesRuntime
 // 	finalizedBy('publishToMavenLocal')
 // }
 
-// tasks.named('publish').configure {
-// 	dependsOn('build')
-// }
+tasks.named('build').configure {
+	finalizedBy('publishToMavenLocal')
+}
+
+tasks.named('publish').configure {
+	dependsOn('build')
+}
 
 // tasks.named('afterReleaseBuild').configure {
 // 	dependsOn('build')
 // }
 
-// afterReleaseBuild.dependsOn('build')
+// afterReleaseBuild.dependsOn('publish')
 
 //tasks.named("afterReleaseBuild").configure {
 //	dependsOn publish
