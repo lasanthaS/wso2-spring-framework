@@ -462,7 +462,7 @@ tasks.named('publish').configure {
 }
 
 tasks.named('afterReleaseBuild').configure {
-	dependsOn('build')
+	dependsOn('publish')
 }
 
 //tasks.named("afterReleaseBuild").configure {
