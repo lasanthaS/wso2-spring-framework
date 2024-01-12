@@ -6,6 +6,7 @@ apply plugin: 'org.springframework.build.optional-dependencies'
 // apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'me.champeau.jmh'
 apply from: "$rootDir/gradle/publications.gradle"
+// apply plugin: 'net.researchgate.release'
 
 dependencies {
 	jmh 'org.openjdk.jmh:jmh-core:1.32'
@@ -115,9 +116,19 @@ publishing {
 components.java.withVariantsFromConfiguration(configurations.testFixturesApiElements) { skip() }
 components.java.withVariantsFromConfiguration(configurations.testFixturesRuntimeElements) { skip() }
 
-tasks.named('build').configure {
-	finalizedBy publishToMavenLocal
-}
+// tasks.named('build').configure {
+// 	finalizedBy('publishToMavenLocal')
+// }
+
+// tasks.named('publish').configure {
+// 	dependsOn('build')
+// }
+
+// tasks.named('afterReleaseBuild').configure {
+// 	dependsOn('build')
+// }
+
+// afterReleaseBuild.dependsOn('build')
 
 //tasks.named("afterReleaseBuild").configure {
 //	dependsOn publish
