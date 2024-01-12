@@ -321,7 +321,6 @@ configure([rootProject] + javaProjects) { project ->
 	apply plugin: "java-test-fixtures"
 	apply plugin: "checkstyle"
 	apply plugin: 'org.springframework.build.compile'
-	apply plugin: 'net.researchgate.release'
 	apply from: "${rootDir}/gradle/toolchains.gradle"
 	apply from: "${rootDir}/gradle/ide.gradle"
 
@@ -413,6 +412,7 @@ configure([rootProject] + javaProjects) { project ->
 
 configure(moduleProjects) { project ->
 	apply from: "${rootDir}/gradle/spring-module.gradle"
+	apply plugin: 'net.researchgate.release'
 }
 
 configure(rootProject) {
