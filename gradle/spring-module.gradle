@@ -116,6 +116,14 @@ publishing {
 components.java.withVariantsFromConfiguration(configurations.testFixturesApiElements) { skip() }
 components.java.withVariantsFromConfiguration(configurations.testFixturesRuntimeElements) { skip() }
 
+release {
+	tagTemplate = 'v${version}'
+	git {
+		requireBranch = '5.3.31-wso2vx'
+		pushToRemote = 'origin'
+	}
+}
+
 // tasks.named('build').configure {
 // 	finalizedBy('publishToMavenLocal')
 // }
